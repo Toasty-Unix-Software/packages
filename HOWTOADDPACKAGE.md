@@ -74,7 +74,22 @@ that the program actually runs and behaves correctly - not just that
 
 ## 4. Land it here
 
-Rename the built `.tpkg` to `<name>.tpkg` and put it under `tested/`.
-Only put a package there once it has actually passed step 3 - this
-repo only holds packages that have been proven to work, not just
-built.
+If you haven't done step 3 yet, or don't want to: rename the built
+`.tpkg` to `<name>.tpkg` and put it under `untested/`. `tpm` will
+still let people install it, but only after they confirm past its
+"THIS PACKAGE HAS NOT BEEN TESTED" warning.
+
+Once it has actually passed step 3 - installed and run for real with
+`tpm` in a booted TUS - move (or copy) it into `tested/` instead, no
+warning from there on.
+
+Either way, rebuild that directory's index afterward so `tpm update`
+picks up the change:
+
+```
+tpmt index tested
+tpmt index untested
+```
+
+Commit the `.tpkg` together with the regenerated `Packages` file it
+belongs under.
