@@ -1,3 +1,7 @@
+pcc 1.0 pcc_1.0.tpkg
 tcurses 1.0 tcurses.tpkg
 tree 1.0 tree.tpkg
 ftop 1.0 ftop.tpkg
+ksh 1.0 ksh_1.0.tpkg
+nasm 1.0 nasm_1.0.tpkg
+fastfetch 1.0 fastfetch_1.0.tpkg
